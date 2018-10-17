@@ -44,8 +44,8 @@ public class PriorityTestActivity extends AppCompatActivity {
     @Subscribe(priority = 1000, threadMode = ThreadMode.POSTING)
     public void onEvent(MessageEvent event) {
         tv_showUp.setText(event.message);
-        //取消事件传递，则低级别的事件无法接收到信息
-//        EventBus.getDefault().cancelEventDelivery(event) ;
+        //取消事件传递，则低级别的事件无法接收到信息必须在threadMode = ThreadMode.POSTING才能生效
+        EventBus.getDefault().cancelEventDelivery(event) ;
     }
 
     @Subscribe(priority = 1, threadMode = ThreadMode.BACKGROUND)
