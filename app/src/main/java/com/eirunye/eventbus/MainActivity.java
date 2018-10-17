@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void shipFun(View view) {
 
-//        startActivity(new Intent(MainActivity.this, TwoActivity.class));
+        startActivity(new Intent(MainActivity.this, TwoActivity.class));
 //        startActivity(new Intent(MainActivity.this, StickyActivity.class));
 //        startActivity(new Intent(MainActivity.this, StickyTestActivity.class));
-        startActivity(new Intent(MainActivity.this, PriorityTestActivity.class));
+//        startActivity(new Intent(MainActivity.this, PriorityTestActivity.class));
     }
 
 
