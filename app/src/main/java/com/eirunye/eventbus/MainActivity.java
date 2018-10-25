@@ -16,6 +16,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.concurrent.BlockingQueue;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }
