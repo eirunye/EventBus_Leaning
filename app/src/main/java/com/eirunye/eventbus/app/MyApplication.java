@@ -14,12 +14,19 @@ import org.greenrobot.eventbus.EventBus;
  */
 public class MyApplication extends Application {
 
+    private static MyApplication application;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        application = this;
         EventBus.builder().addIndex(new MyEventBusIndex()).installDefaultEventBus();
         //在debug状态下可以使用，抛出异常处理信息
 //        EventBus.builder().throwSubscriberException(BuildConfig.DEBUG).installDefaultEventBus();
 
+    }
+
+    public static MyApplication getMyApplication() {
+        return application;
     }
 }
