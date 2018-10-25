@@ -31,7 +31,7 @@ public class TwoActivity extends AppCompatActivity {
 
     private void onClickView(View view) {
         String message = et_message.getText().toString();
-        if (null == message || "".equals(message))
+        if ("".equals(message))
             return;
         EventBus.getDefault().post(new MessageEvent(message));
 
